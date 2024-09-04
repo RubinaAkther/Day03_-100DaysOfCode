@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WiseTutors</title>
+    <!--font-awesome cdn-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--bootstrap cdn-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <style>
+      .bg-image {
+        background-image: url('../img/2208_w023_n003_2792b_p1_2792.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 500px;
+      }
+      .about-us-heading h1{
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-top: 6%;
+      }
+      .about-us-heading p{
+        font-size: 0.875rem;
+        font-weight: 400;
+        width: 47%;
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 3%;
+        color: #808080ea;
+        text-transform: capitalize;
+      }
+      .about-us-heading p span{
+        color: #6667ab;
+        font-weight: 700;
+      }
+      .about-us-content {
+        margin-top: 4%;
+      }
+      .about-content-heading {
+        font-size: 2rem;
+        text-transform: capitalize;
+        font-weight: 900;
+      }
+      .about-content-para p{
+        font-size: 0.875rem;
+        width: 85%;
+        text-transform: capitalize;
+        color: #808080ea;
+        font-weight: 400;
+      }
+      .row-content {
+        padding-top: 4%;
+        padding-bottom: 4%;
+      }
+      .hr-color {
+        color: #b9b9b9;
+      }
+      .profile-pic img{
+        width: 50px;
+        border-radius: 50%;
+      }
+      .profile-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    }
+
+    .profile-pic {
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-pic img {
+        max-width: 100px;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    .profile-details {
+        flex: 1;
+        padding-left: 20px;
+    }
+
+    .profile-details h5 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .profile-details p {
+        color: #555;
+        font-size: 0.8rem;
+    }
+    .about-content-para .founder-content {
+      font-size: 1.7rem;
+      color: black;
+      font-weight: 500;
+      width: 80%;
+      text-transform: capitalize;
+      margin-top: 0px;
+    }
+    .flip-horizontal {
+      display: inline-block;
+      transform: scaleX(-1);
+      font-size: 2rem;
+      color: rgb(255, 196, 47);
+      margin-bottom: 0px;
+    }
+    @media (max-width:576px) {
+      .logIn {
+        gap: 15px;
+      }
+      .about-us-heading h1 {
+        font-size: 1.8rem;
+      }
+      .about-us-heading p {
+        width: 100%;
+      }
+      .bg-image {
+        height: 300px;
+      }
+      .about-content-heading {
+        font-size: 1.5rem;
+      }
+      .about-content-para p {
+        width: 100%;
+      }
+      .profile-container {
+        padding: 0px;
+        margin-bottom: 20px;
+      }
+      .flip-horizontal {
+        font-size: 1.5rem;
+      }
+      .about-content-para .founder-content {
+        font-size: 1rem;
+        margin-top: 0px !important;
+        padding-top: 0px;
+        width: 100%;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <!--Navbar Start-->
+    <nav class="custom_nav navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-md">
+        <!--Logo-->
+        <a class="logo navbar-brand fs-3" href="#">
+          <i class="fa-solid fa-book-open-reader"></i>Wise<span>Tutors</span></a
+        >
+        <!--toggle btn-->
+        <button
+          class="custom_btn navbar-toggler shadow-none border-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--SideBar-->
+        <div
+          class="sidebar offcanvas offcanvas-start"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <!--SideBar Header-->
+          <div class="offcanvas-header text-black border-bottom">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              <a class="logo navbar-brand fs-5" href="#">
+                <i class="fa-solid fa-book-open-reader"></i>Wise<span
+                  >Tutors</span
+                ></a
+              >
+            </h5>
+            <button
+              type="button"
+              class="btn-close shadow-none"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!--sidebar body-->
+          <div
+              class="offcanvas-body d-flex justify-content-center align-items-center flex-column p-4 flex-lg-row"
+            >
+              <ul
+                class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3"
+              >
+                <li class="nav-item">
+                  <a
+                    class="nav-link mx-2"
+                    aria-current="page"
+                    href="./index.html"
+                    >Request A Tutor</a
+                  >
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./tutorList.html">All Tutors</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./searchTutor.html">Search Tutor</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./ourTutor.html">Tuition Jobs</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link active" href="./aboutUs.html">About Us</a>
+                </li>
+              </ul>
+              <!--login/Sign Up-->
+              <div
+                class="logIn d-flex flex-column flex-lg-row justify-content-center align-itmes-center"
+              >
+                <a href="./updateYourProfile.html" class="outlin-btn common-btn"
+                  >My Account</a
+                >
+                <a href="./tutorProfile.html" class="bg-btn common-btn">Become a Tutor</a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </nav>
+    <!--Navbar end-->
+
+    <!--About us section start-->
+    <div class="about-us-heading container mt-5">
+      <h1 class="text-center">About Us</h1>
+      <p class="text-center">
+        <span>WiseTutor</span> is your destination for personalized, high-quality online education. Join us to unlock your potential and achieve academic success.
+      </p>
+    </div>
+
+    <div class="container-fluid bg-image">
+      <!-- Background image container -->
+    </div>
+
+    <div class="about-us-content container">
+      <div class="row row-content">
+        <div class="col-md-4">
+          <h3 class="about-content-heading">who we are?</h3>
+        </div>
+        <div class="col-md-8 about-content-para">
+          <p>since its inception in 2015, tutor academy has emerged as the cornerstone of bangladesh's educational landscape, harnessing the power of digital connectivity to bridge the gap between meticulously screened tutors proficent in a diverse array of subjects across six comprehensive categories. with an unwavering commitment to fostering educational equity and families alike, offering a seamless platform where learning objectives are met and educational aspirations are realized.</p>
+        </div>
+      </div>
+      <hr class="hr-color">
+      <div class="row row-content">
+        <div class="col-md-4">
+          <h3 class="about-content-heading">Why Choose us?</h3>
+        </div>
+        <div class="col-md-8 about-content-para">
+          <p>through its innovative approach, tutor academy has revolutionized the traditional model of tutoring. transcending geographical limitations and empowering learners from all corners of the nation to access top-tier educational resources and guidance. by curatinga network of verified tutors renowned for their expertise and dedicastion, tuor academy ensures that each interaction, whether in-person or virtual, is characterized by personalized attention, tailored lesson plans, and measurable progress.</p>
+        </div>
+      </div>
+      <hr class="hr-color">
+      <div class="row row-content">
+        <div class="col-md-4">
+          <h3 class="about-content-heading">why choose us?</h3>
+        </div>
+        <div class="col-md-8 about-content-para">
+          <p>through its innovative approach, tutor academy has revolutionized the traditional model of tutoring. transcending geographical limitations and empowering learners from all corners of the nation to access top-tier educational resources and guidance. by curatinga network of verified tutors renowned for their expertise and dedicastion, tuor academy ensures that each interaction, whether in-person or virtual, is characterized by personalized attention, tailored lesson plans, and measurable progress.</p>
+          <p>Moreover, tutor academy's impact extends beyond mere academic support, as it catalyzes social mobility and empowerment, empowering students to unlock their full potential and pursue their dreams with confidence. by fostering a culture of collaboration, accountablility. and continuous learning tutor academy not only enriches individual lives but also contributes to the collective advacement of bangladesh's educational ecosystem</p>
+        </div>
+      </div>
+      <hr class="hr-color">
+      <div class="row row-content">
+        <div class="col-md-4">
+          <h3 class="about-content-heading">Our goal</h3>
+        </div>
+        <div class="col-md-8 about-content-para">
+          <p>as bangladesh's premier online educational platform, tutor academy remains steadfast in its mission to democratize learning, eleevated academic standards, and nuture the next generation of learders and innovators.</p>
+          
+          <p>with its unwavering dedication to excellence and commitment to inclusivity, tutor academy continues to set the benchmark for educational empowerment, inspiring learners of all ages to embark on a journey of discovery, growth and limitless possiblilies.</p>
+        </div>
+      </div>
+      <hr class="hr-color">
+      <div class="row row-content">
+        <div class="col-md-4">
+          <div class="profile-container">
+            <div class="profile-pic">
+                <img src="../img/istockphoto-175588257-612x612.jpg" alt="Profile Picture">
+            </div>
+            <div class="profile-details">
+                <h5>MD Firojul Islam</h5>
+                <p>Founder & CSO</p>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-8 about-content-para">
+          <i class="fa-solid fa-quote-right flip-horizontal"></i>
+
+         <p class="founder-content">
+          As bangladesh's premier online Educational platform, Tutor Academy Remains Steadfast In Its Mission To Democratize Learning, Elevate Academic Standards, And Nurture The Next Generation of leaders And innovators."</p>
+        </div>
+      </div>
+    </div>
+    <!--About us section end-->
+    <!--Styled div start-->
+    <div class="styled-div">
+      <h1>Can't Find Your Desired Tutor?</h1>
+      <div class="button-container">
+        <button class="white-button">Request a Tutor</button>
+        <button class="orange-button"><i class="fa-solid fa-phone-volume"></i> Call Us Now</button>
+      </div>
+    </div>
+    <!--styled div end-->
+
+    <!-- Footer section start -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-item">
+          <div class="logo">
+            <i class="fa-solid fa-book-open-reader"></i>Wise<span>Tutors</span>
+          </div>
+          <p>
+            Established in 2015, Tutor Academy is Bangladesh's premier online
+            platform, linking guardians, students, and verified tutors across 6
+            categories nationwide.
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+          <div class="app">
+            <div class="common-app">
+              <div class="app-img">
+                <img src="../img/appstore-icon-512x467-rmaotxgf.png" alt="app store">
+              </div>
+              <p>Download on the <br><span>App Store</span></p>
+            </div>
+            <div class="common-app">
+              <div class="app-img">
+                <img src="../img/104089.png" alt="Google Play">
+              </div>
+              <p>Download on the <br><span>App Store</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-item">
+          <h2>Useful Link</h2>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Become a Tutor</a></li>
+            <li><a href="#">Request a Tutor</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Request a Tutor</a></li>
+          </ul>
+        </div>
+        <div class="footer-item">
+          <h2>Our Services</h2>
+          <ul>
+            <li><a href="#">Online Tutoring</a></li>
+            <li><a href="#">Group Tutoring</a></li>
+            <li><a href="#">Package Tutoring</a></li>
+            <li><a href="#">Study Abroad Tutoring</a></li>
+            <li><a href="#">Hostel Facilities</a></li>
+          </ul>
+        </div>
+        <div class="footer-item">
+          <h2>Office Address</h2>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Become a Tutor</a></li>
+            <li><a href="#">Request a Tutor</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Request a Tutor</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!--Footer section end-->
+
+    <!--Copyright section start-->
+    <div class="footer">
+      <p>&#169Copyright 2024 | Tutor Academy | All Rights Reserved</p>
+    </div>
+    <!--Copyright section end-->
+
+    <!--bootstrap cdn-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

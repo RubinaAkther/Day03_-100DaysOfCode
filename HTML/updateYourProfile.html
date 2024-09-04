@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WiseTutors</title>
+    <!--font-awesome cdn-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--Selection cdn-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <!--bootstrap cdn-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../CSS/profileUpdate.css">
+    <link rel="stylesheet" href="../CSS/style.css" />
+  </head>
+  <body>
+    <!--Navbar Start-->
+    <nav class="custom_nav navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-md">
+        <!--Logo-->
+        <a class="logo navbar-brand fs-3" href="#">
+          <i class="fa-solid fa-book-open-reader"></i>Wise<span>Tutors</span></a
+        >
+        <!--toggle btn-->
+        <button
+          class="custom_btn navbar-toggler shadow-none border-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--SideBar-->
+        <div
+          class="sidebar offcanvas offcanvas-start"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <!--SideBar Header-->
+          <div class="offcanvas-header text-black border-bottom">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              <a class="logo navbar-brand fs-5" href="#">
+                <i class="fa-solid fa-book-open-reader"></i>Wise<span
+                  >Tutors</span
+                ></a
+              >
+            </h5>
+            <button
+              type="button"
+              class="btn-close shadow-none"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!--sidebar body-->
+          <div
+              class="offcanvas-body d-flex justify-content-center align-items-center flex-column p-4 flex-lg-row"
+            >
+              <ul
+                class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3"
+              >
+                <li class="nav-item">
+                  <a
+                    class="nav-link mx-2"
+                    aria-current="page"
+                    href="../index.html"
+                    >Request A Tutor</a
+                  >
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./tutorList.html">All Tutors</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./searchTutor.html">Search Tutor</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./ourTutor.html">Tuition Jobs</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./aboutUs.html">About Us</a>
+                </li>
+              </ul>
+              <!--login/Sign Up-->
+              <div
+                class="logIn d-flex flex-column flex-lg-row justify-content-center align-itmes-center"
+              >
+                <a href="./updateYourProfile.html" class="outlin-btn common-btn"
+                  >My Account</a
+                >
+                <a href="./tutorProfile.html" class="bg-btn common-btn">Become a Tutor</a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </nav>
+    <!--Navbar end-->
+    <!--Heading section start-->
+    <div class="heading-tutor">
+      <h2>Update Your Profile</h2>
+      <p>
+        Udating your profile is a crucial step in ensuring that your information
+        is current and accurate. By keeping your prfile up-to-date
+      </p>
+    </div>
+    <!--Heading section end-->
+    <!--Form start-->
+    <div class="container-fluid border-top mt-5">
+        <div class="container">
+            <div class="row">
+              <!-- Navigation Sidebar -->
+              <div class="col-md-5 mb-3 mt-5">
+                <div class="list-group">
+                  <a
+                    href="#"
+                    class="list-group-item list-group-item-action slide-item active"
+                    data-target="#personalInformation"
+                    >Personal Information</a
+                  >
+                  <a
+                    href="#"
+                    class="list-group-item list-group-item-action slide-item"
+                    data-target="#universityInformation"
+                    >University Information</a
+                  >
+                  <a
+                    href="#"
+                    class="list-group-item list-group-item-action slide-item"
+                    data-target="#tuitionInformation"
+                    >Tuition Information</a
+                  >
+                  <a
+                    href="#"
+                    class="list-group-item list-group-item-action slide-item"
+                    data-target="#educationQualification"
+                    >Education Qualification</a
+                  >
+                </div>
+              </div>
+      
+              <!-- Form Content -->
+              <div class="col-md-7 pt-4 bor-remove">
+                <form id="multiStepForm" class="p-4 border-0 rounded">
+                  <!-- Personal Information Form (Step 1) -->
+                  <div id="personalInformation" class="form-step active">
+                    <h4>Personal Information</h4>
+                    <p>Update your personal information.</p>
+                    <div class="btn-group">
+                      <img
+                        src="../img/istockphoto-175588257-612x612.jpg"
+                        alt="Profile Picture"
+                        class="profile-pic"
+                      />
+                      <button type="button" class="btn button1">
+                        Change Picture
+                      </button>
+                      <button type="button" class="btn button2">
+                        Delete Picture
+                      </button>
+                    </div>
+                    <div class="border-bottom"></div>
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="name" class="form-label">Name*</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="name"
+                          placeholder="Type here"
+                          required
+                        />
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="phone" class="form-label">Phone Number*</label>
+                        <input
+                          type="tel"
+                          class="form-control"
+                          id="phone"
+                          placeholder="Type here"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="background" class="form-label"
+                          >Background Medium*</label
+                        >
+                        <select class="form-select" id="background" required>
+                          <option value="" disabled selected>Please select</option>
+                          <option value="science">Science</option>
+                          <option value="commerce">Commerce</option>
+                          <option value="arts">Arts</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="bloodGroup" class="form-label"
+                          >Blood Group*</label
+                        >
+                        <select class="form-select" id="bloodGroup" required>
+                          <option value="" disabled selected>Please select</option>
+                          <option value="a+">A+</option>
+                          <option value="b+">B+</option>
+                          <option value="ab+">AB+</option>
+                          <option value="o+">O+</option>
+                          <!-- Add other blood groups as needed -->
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="fatherName" class="form-label"
+                          >Father Name*</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="fatherName"
+                          placeholder="Type here"
+                          required
+                        />
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="motherName" class="form-label"
+                          >Mother Name*</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="motherName"
+                          placeholder="Type here"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="fatherPhone" class="form-label"
+                          >Father Phone Number*</label
+                        >
+                        <input
+                          type="tel"
+                          class="form-control"
+                          id="fatherPhone"
+                          placeholder="Type here"
+                          required
+                        />
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="altPhone" class="form-label"
+                          >Alternative Phone Number*</label
+                        >
+                        <input
+                          type="tel"
+                          class="form-control"
+                          id="altPhone"
+                          placeholder="Type here"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="currentLocation" class="form-label"
+                          >Current Location*</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="currentLocation"
+                          placeholder="Type here"
+                          required
+                        />
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="facebookId" class="form-label"
+                          >Facebook ID Link*</label
+                        >
+                        <input
+                          type="url"
+                          class="form-control"
+                          id="facebookId"
+                          placeholder="Please select"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="btn-place">
+                      <a href="#" class="btn btn-success">Save & Continue</a>
+                    </div>
+                    
+                  </div>
+      
+                  <!-- University Information Form (Step 2) -->
+                  <div id="universityInformation" class="form-step">
+                    <h4>University Information</h4>
+                    <p>Update your university information.</p>
+                    <div class="mb-3">
+                      <label for="universityName" class="form-label"
+                        >University/Institution Name*</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="universityName"
+                        placeholder="Type here"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="department" class="form-label">Department*</label>
+                      <select class="form-select" id="department" required>
+                        <option value="" disabled selected>Please select</option>
+                        <!-- Add departments as needed -->
+                        <option value="computer-science">Computer Science</option>
+                        <option value="business">Business</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="law">Law</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="year" class="form-label">Year*</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="year"
+                        placeholder="Type here"
+                        required
+                      />
+                    </div>
+                    <labe for="Image" class="form-label"
+                      >College/University ID Front Image*</labe
+                    >
+                    <div class="upload-container">
+                      <label for="idFrontImage"
+                        ><i
+                          class="fa-solid fa-cloud-arrow-up fa-2xl"
+                          style="color: #74c0fc"
+                        ></i
+                      ></label>
+                      <input type="file" id="idFrontImage" />
+                      <p>
+                        Drag & drop to upload <br> <span>Or Browse</span> 
+                      </p>
+                    </div>
+                    <labe for="Image" class="form-label"
+                      >College/University ID Back Image*</labe
+                    >
+                    <div class="upload-container">
+                      <label for="idBackImage"
+                        ><i
+                          class="fa-solid fa-cloud-arrow-up fa-2xl"
+                          style="color: #74c0fc"
+                        ></i
+                      ></label>
+                      <input type="file" id="idBackImage" />
+                      <p>
+                        Drag & drop to upload <br><span>Or Browse</span> 
+                      </p>
+                    </div>
+                    <div class="btn-place">
+                      <a href="#" class="btn btn-success">Save & Continue</a>
+                    </div>
+                  </div>
+      
+                  <!-- Other forms will go here -->
+                  <div class="form-step" id="tuition-information">
+                    <h4>Tuition Information</h4>
+                    <p>Update your tuition information.</p>
+      
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="current-status" class="form-label"
+                          >Current Status for Tuition*</label
+                        >
+                        <select id="current-status" 
+                        class="form-select"
+                        name="current-status" required>
+                          <option value="" disabled selected>Please select</option>
+                          <option value="full-time">Full-Time</option>
+                          <option value="part-time">Part-Time</option>
+                          <option value="freelance">Freelance</option>
+                        </select>
+                      </div>
+      
+                      <div class="form-group">
+                        <label for="expected-salary" class="form-label">Expected Minimum Salary*</label>
+                        <input
+                          type="text"
+                          id="expected-salary"
+                          class="form-select"
+                          name="expected-salary"
+                          placeholder="Type here"
+                          required
+                        />
+                      </div>
+                    </div>
+      
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="preferred-time" class="form-label">Preferred Tuition Time*</label>
+                        <select id="preferred-time" 
+                        class="form-select"
+                        name="preferred-time" required>
+                          <option value="" disabled selected>Please select</option>
+                          <option value="morning">Morning</option>
+                          <option value="afternoon">Afternoon</option>
+                          <option value="evening">Evening</option>
+                          <option value="anytime">Anytime</option>
+                        </select>
+                      </div>
+      
+                      <div class="form-group">
+                        <label for="days-per-week" class="form-label">Days per week*</label>
+                        <select id="days-per-week" 
+                        class="form-select"name="days-per-week" required>
+                          <option value="" disabled selected>Please select</option>
+                          <option value="1">1 Day</option>
+                          <option value="2">2 Days</option>
+                          <option value="3">3 Days</option>
+                          <option value="4">4 Days</option>
+                          <option value="5">5 Days</option>
+                          <option value="6">6 Days</option>
+                          <option value="7">7 Days</option>
+                        </select>
+                      </div>
+                    </div>
+      
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="preferred-medium" class="form-label"
+                          >Preferred Medium of Education*</label
+                        >
+                        <select
+                          id="preferred-medium"
+                          class="form-select"
+                          name="preferred-medium"
+                          required
+                        >
+                          <option value="" disabled selected>Please select</option>
+                          <option value="english">English</option>
+                          <option value="hindi">Hindi</option>
+                          <option value="bilingual">Bilingual</option>
+                        </select>
+                      </div>
+      
+                      <div class="form-group">
+                        <label for="tutoring-style" class="form-label">Preferred Tutoring Style*</label>
+                        <select id="tutoring-style"
+                        class="form-select" 
+                        name="tutoring-style" required>
+                          <option value="" disabled selected>Please select</option>
+                          <option value="one-on-one">One-on-One</option>
+                          <option value="group">Group</option>
+                          <option value="online">Online</option>
+                          <option value="hybrid">Hybrid</option>
+                        </select>
+                      </div>
+                    </div>
+      
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="preferred-classes"
+                         class="form-label">Preferred Classes*</label>
+                        <select
+                          id="preferred-classes"
+                          class="form-select"
+                          name="preferred-classes"
+                          required
+                        >
+                          <option value="" disabled selected>Please select</option>
+                          <option value="elementary">Elementary</option>
+                          <option value="middle-school">Middle School</option>
+                          <option value="high-school">High School</option>
+                          <option value="college">College</option>
+                          <option value="university">University</option>
+                        </select>
+                      </div>
+      
+                      <div class="form-group">
+                        <label for="preferred-subjects" class="form-label">Preferred Subjects*</label>
+                        <select
+                          id="preferred-subjects"
+                          class="form-select"
+                          name="preferred-subjects"
+                          required
+                        >
+                          <option value="" disabled selected>Please select</option>
+                          <option value="math">Math</option>
+                          <option value="science">Science</option>
+                          <option value="english">English</option>
+                          <option value="history">History</option>
+                          <option value="geography">Geography</option>
+                          <option value="languages">Languages</option>
+                        </select>
+                      </div>
+                    </div>
+      
+                    <div class="form-group">
+                      <label for="preferred-area" class="form-label">Preferred Area to Teach*</label>
+                      <select id="preferred-area"
+                      class="form-select"
+                       name="preferred-area" required>
+                        <option value="" disabled selected>Please select</option>
+                        <option value="urban">Urban</option>
+                        <option value="suburban">Suburban</option>
+                        <option value="rural">Rural</option>
+                      </select>
+                    </div>
+                    <div class="btn-place">
+                      <a href="#" class="btn btn-success">Save & Continue</a>
+                    </div>
+      
+                    
+                  </div>
+                  <!--Education qualification form-->
+                  <div class="form-step" id="education-qualification">
+                    <h4>Education Qualification</h4>
+                    <p>Update your education qualification.</p>
+      
+                    <div class="form-group">
+                      <label for="institute-name" class="form-label">Institute Name*</label>
+                      <input
+                        type="text"
+                        id="institute-name"
+                        name="institute-name"
+                        placeholder="Type here"
+                        required
+                      />
+                    </div>
+      
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="passed-year" class="form-label">Passed Year*</label>
+                        <select id="passed-year"
+                        class="form-select"
+                         name="passed-year" required>
+                          <option value="" disabled selected>Please select</option>
+                          <option value="2019">2019</option>
+                          <option value="2020">2020</option>
+                          <option value="2021">2021</option>
+                          <option value="2022">2022</option>
+                          <option value="2023">2023</option>
+                        </select>
+                      </div>
+      
+                      <div class="form-group">
+                        <label for="degree"
+                         class="form-label">Degree*</label>
+                        <select id="degree"
+                         class="form-select"
+                         name="degree" required>
+                          <option value="" disabled selected>Please select</option>
+                          <option value="bachelor">Bachelor's</option>
+                          <option value="master">Master's</option>
+                          <option value="phd">Ph.D.</option>
+                          <option value="diploma">Diploma</option>
+                          <option value="certificate">Certificate</option>
+                        </select>
+                      </div>
+                    </div>
+      
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="group-subject" class="form-label">Group/Subject*</label>
+                        <input
+                          type="text"
+                          id="group-subject"
+                          name="group-subject"
+                          placeholder="Type here"
+                          required
+                        />
+                      </div>
+      
+                      <div class="form-group">
+                        <label for="results" class="form-label">Results*</label>
+                        <input
+                          type="text"
+                          id="results"
+                          name="results"
+                          placeholder="Type here"
+                          required
+                        />
+                      </div>
+                    </div>
+      
+                    <div class="btn-place bg-change">
+                      <a href="#" class="btn btn-success">Done</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!--Form end-->
+      <!--Styled div start-->
+      <div class="styled-div">
+      <h1>Can't Find Your Desired Tutor?</h1>
+      <div class="button-container">
+          <button class="white-button">Request a Tutor</button>
+          <button class="orange-button"><i class="fa-solid fa-phone-volume"></i> Call Us Now</button>
+      </div>
+      </div>
+      <!--styled div end-->
+  
+      <!-- Footer section start -->
+      <footer>
+      <div class="footer-container">
+          <div class="footer-item">
+          <div class="logo">
+              <i class="fa-solid fa-book-open-reader"></i>Wise<span>Tutors</span>
+          </div>
+          <p>
+              Established in 2015, Tutor Academy is Bangladesh's premier online
+              platform, linking guardians, students, and verified tutors across 6
+              categories nationwide.
+          </p>
+          <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+          <div class="app">
+              <div class="common-app">
+              <div class="app-img">
+                  <img src="../img/appstore-icon-512x467-rmaotxgf.png" alt="app store">
+              </div>
+              <p>Download on the <br><span>App Store</span></p>
+              </div>
+              <div class="common-app">
+              <div class="app-img">
+                  <img src="../img/104089.png" alt="Google Play">
+              </div>
+              <p>Download on the <br><span>App Store</span></p>
+              </div>
+          </div>
+          </div>
+          <div class="footer-item">
+          <h2>Useful Link</h2>
+          <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Become a Tutor</a></li>
+              <li><a href="#">Request a Tutor</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Request a Tutor</a></li>
+          </ul>
+          </div>
+          <div class="footer-item">
+          <h2>Our Services</h2>
+          <ul>
+              <li><a href="#">Online Tutoring</a></li>
+              <li><a href="#">Group Tutoring</a></li>
+              <li><a href="#">Package Tutoring</a></li>
+              <li><a href="#">Study Abroad Tutoring</a></li>
+              <li><a href="#">Hostel Facilities</a></li>
+          </ul>
+          </div>
+          <div class="footer-item">
+          <h2>Office Address</h2>
+          <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Become a Tutor</a></li>
+              <li><a href="#">Request a Tutor</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Request a Tutor</a></li>
+          </ul>
+          </div>
+      </div>
+      </footer>
+      <!--Footer section end-->
+  
+      <!--Copyright section start-->
+      <div class="footer">
+      <p>&#169Copyright 2024 | Tutor Academy | All Rights Reserved</p>
+      </div>
+      <!--Copyright section end-->
+
+
+     <!--bootstrap cdn-->
+     <script
+     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+     crossorigin="anonymous"
+ ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const navItems = document.querySelectorAll('.slide-item');
+        const formSteps = document.querySelectorAll('.form-step');
+        const saveAndContinueButtons =
+          document.querySelectorAll('.btn-success');
+        let currentStep = 0;
+
+        // Function to update form visibility
+        function updateFormVisibility(step) {
+          navItems.forEach((nav, index) => {
+            nav.classList.toggle('active', index === step);
+          });
+          formSteps.forEach((stepElement, index) => {
+            stepElement.classList.toggle('active', index === step);
+          });
+          currentStep = step;
+        }
+
+        // Function to validate the current form
+        function validateCurrentForm() {
+          const currentForm = formSteps[currentStep];
+          const inputs = currentForm.querySelectorAll('input, select');
+          let isValid = true;
+
+          inputs.forEach((input) => {
+            if (input.required && !input.value) {
+              input.classList.add('is-invalid');
+              isValid = false;
+            } else {
+              input.classList.remove('is-invalid');
+            }
+          });
+
+          return isValid;
+        }
+
+        // Initial setup: show the first step
+        updateFormVisibility(currentStep);
+
+        // Navigation item click event
+        navItems.forEach((item, index) => {
+          item.addEventListener('click', function () {
+            updateFormVisibility(index);
+          });
+        });
+
+        // Save & Continue button click event
+        saveAndContinueButtons.forEach((button) => {
+          button.addEventListener('click', function () {
+            if (validateCurrentForm()) {
+              if (currentStep < navItems.length - 1) {
+                updateFormVisibility(currentStep + 1);
+              }
+            }
+          });
+        });
+      });
+    </script>
+    <script src="./script.js"></script>
+  </body>
+</html>

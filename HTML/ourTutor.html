@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WiseTutors</title>
+    <!--font-awesome cdn-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--Selection cdn-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <!--bootstrap cdn-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <style>
+      .needTutor {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #fff;
+        margin-bottom: 20px;
+        padding: 30px;
+      }
+      .needTutor .header {
+        margin-bottom: 15px;
+        justify-content: space-between;
+      }
+      .needTutor .header h5 {
+        margin: 0;
+        font-size: 1.8rem;
+        font-weight: 900;
+      }
+      .needTutor .header p {
+        color: #7345a7;
+        font-size: 0.875rem;
+      }
+      .needTutor .body {
+        margin-bottom: 15px;
+      }
+      .needTutor .body .details {
+        margin-bottom: 15px;
+        width: 89%;
+      }
+      .needTutor .body .properties {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .needTutor .body .property-row {
+        display: flex;
+        gap: 20px;
+      }
+      .needTutor .body .property {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .needTutor .body .property .light-text {
+        color: #555;
+        font-size: 0.875rem;
+      }
+      .needTutor .body .property .bold-text {
+        font-weight: bold;
+        font-size: 0.875rem;
+      }
+      .needTutor .footer {
+        text-align: center;
+      }
+      .needTutor .footer .btn {
+        margin-top: 10px;
+        width: 100%;
+        background-color: #62299711;
+        border:none;
+        padding: 13px 20px;
+        color: #000000;
+        font-size: 0.9rem;
+      }
+      .needTutor .footer .btn:hover {
+        background-color: #6667ab;
+        color: white;
+      }
+      .footer {
+        border: none;
+      }
+      @media (max-width: 576px) {
+        .custom-container {
+          width: 100%;
+          margin: 0px;
+          padding: 0px;
+        }
+        .needTutor .header h5 {
+          font-size: 1.1rem;
+        }
+        .col-md-6 {
+          padding: 0px;;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--Navbar Start-->
+    <nav class="custom_nav navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-md">
+        <!--Logo-->
+        <a class="logo navbar-brand fs-3" href="#">
+          <i class="fa-solid fa-book-open-reader"></i>Wise<span>Tutors</span></a
+        >
+        <!--toggle btn-->
+        <button
+          class="custom_btn navbar-toggler shadow-none border-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--SideBar-->
+        <div
+          class="sidebar offcanvas offcanvas-start"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <!--SideBar Header-->
+          <div class="offcanvas-header text-black border-bottom">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              <a class="logo navbar-brand fs-5" href="#">
+                <i class="fa-solid fa-book-open-reader"></i>Wise<span
+                  >Tutors</span
+                ></a
+              >
+            </h5>
+            <button
+              type="button"
+              class="btn-close shadow-none"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!--sidebar body-->
+          <div
+              class="offcanvas-body d-flex justify-content-center align-items-center flex-column p-4 flex-lg-row"
+            >
+              <ul
+                class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3"
+              >
+                <li class="nav-item">
+                  <a
+                    class="nav-link mx-2"
+                    aria-current="page"
+                    href="../index.html"
+                    >Request A Tutor</a
+                  >
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./tutorList.html">All Tutors</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./searchTutor.html">Search Tutor</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link active" href="./ourTutor.html">Tuition Jobs</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./aboutUs.html">About Us</a>
+                </li>
+              </ul>
+              <!--login/Sign Up-->
+              <div
+                class="logIn d-flex flex-column flex-lg-row justify-content-center align-itmes-center"
+              >
+                <a href="./updateYourProfile.html" class="outlin-btn common-btn"
+                  >My Account</a
+                >
+                <a href="./tutorProfile.html" class="bg-btn common-btn">Become a Tutor</a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </nav>
+    <!--Navbar end-->
+    <!--search location section start-->
+    <div class="tutor_or_Tuition">
+      <h2>Find Your Tutor Or Tuition</h2>
+      <p>Hire your tutor with a single click from these categories</p>
+      <!--Location selection-->
+      <div class="location">
+        <div class="location-left">
+          <select name="" id="" class="demo">
+            <option value="al">Dhaka</option>
+            <option value="al">whyslf</option>
+            <option value="al">jidoe</option>
+            <option value="al">showe</option>
+          </select>
+        </div>
+        
+        <div class="line"></div>
+        <div class="location-right"><i class="fa-solid fa-location-dot"></i>
+          <select name="" id="" class="demo">
+            <option value="al">Mohammodpur</option>
+            <option value="al">whyslf</option>
+            <option value="al">jidoe</option>
+            <option value="al">showe</option>
+          </select> </div>
+        
+        <button class="common-btn bg-btn">Search</button>
+      </div>
+      <!--Filter section-->
+      <div class="filters">
+        <p id="hideDiv">Filters</p>
+        <div class="hide" id="myDiv">
+          <div class="dropdown_box">
+            <div class="dropdown">
+              <p>Background Medium <i class="fa-solid fa-angle-down"></i></p>
+              <div class="options"></div>
+            </div>
+            <div class="dropdown">
+              <p>Select Class <i class="fa-solid fa-angle-down"></i></p>
+              <div class="options"></div>
+            </div>
+            <div class="dropdown">
+              <p>Preferred Subject <i class="fa-solid fa-angle-down"></i></p>
+              <div class="options"></div>
+            </div>
+            <div class="dropdown">
+              <p>Select Gender <i class="fa-solid fa-angle-down"></i></p>
+              <div class="options"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--search location section end-->
+    <!--card section start-->
+
+    <!--card section end-->
+    <div class="custom-container container mt-5">
+        <div class="row">
+          <!-- Row 1 -->
+          <div class="col-md-6 mb-4">
+            <div class="needTutor">
+              <div class="header d-flex align-items-center">
+                <h5>Need Tutor For Class Two</h5>
+                <p>1 month ago</p>
+              </div>
+              <div class="body">
+                <div class="details">
+                  <p>These tutors provide personalized attention, helping young
+                learners grasp foundational concepts in subjects like math,
+                reading, and writing.</p>
+                </div>
+                <div class="properties">
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Location</div>
+                      <div class="bold-text">Muhammadpur</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Subject</div>
+                      <div class="bold-text">All</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Per Week</div>
+                      <div class="bold-text">4/5 Days</div>
+                    </div>
+                  </div>
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Background Medium</div>
+                      <div class="bold-text">Bangla Medium</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Tution Time</div>
+                      <div class="bold-text">Negotiable</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Salary</div>
+                      <div class="bold-text">4/5k BDT</div>
+                    </div>
+                  </div>
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Tutor Gender</div>
+                      <div class="bold-text">Female</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Date</div>
+                      <div class="bold-text">27-05-2024</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Job ID</div>
+                      <div class="bold-text">108</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer">
+                <button class="btn">Apply Now</button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-6 mb-4">
+            <div class="needTutor">
+              <div class="header d-flex align-items-center">
+                <h5>Need Tutor For Class Three</h5>
+                <p>2 weeks ago</p>
+              </div>
+              <div class="body">
+                <div class="details">
+                  <p>These tutors provide personalized attention, helping young
+                learners grasp foundational concepts in subjects like math,
+                reading, and writing.</p>
+                </div>
+                <div class="properties">
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Location</div>
+                      <div class="bold-text">Dhanmondi</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Subject</div>
+                      <div class="bold-text">Math</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Per Week</div>
+                      <div class="bold-text">3/4 Days</div>
+                    </div>
+                  </div>
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Background Medium</div>
+                      <div class="bold-text">English Medium</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Tution Time</div>
+                      <div class="bold-text">Flexible</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Salary</div>
+                      <div class="bold-text">5/6k BDT</div>
+                    </div>
+                  </div>
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Tutor Gender</div>
+                      <div class="bold-text">Male</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Date</div>
+                      <div class="bold-text">01-06-2024</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Job ID</div>
+                      <div class="bold-text">109</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer">
+                <button class="btn">Apply Now</button>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Repeat similar blocks for Rows 2, 3, and 4 -->
+        </div>
+        <div class="row">
+          <!-- Row 2 -->
+          <div class="col-md-6 mb-4">
+            <div class="needTutor">
+              <div class="header d-flex align-items-center">
+                <h5>Need Tutor For Class Two</h5>
+                <p>1 month ago</p>
+              </div>
+              <div class="body">
+                <div class="details">
+                  <p>These tutors provide personalized attention, helping young
+                learners grasp foundational concepts in subjects like math,
+                reading, and writing.</p>
+                </div>
+                <div class="properties">
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Location</div>
+                      <div class="bold-text">Muhammadpur</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Subject</div>
+                      <div class="bold-text">All</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Per Week</div>
+                      <div class="bold-text">4/5 Days</div>
+                    </div>
+                  </div>
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Background Medium</div>
+                      <div class="bold-text">Bangla Medium</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Tution Time</div>
+                      <div class="bold-text">Negotiable</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Salary</div>
+                      <div class="bold-text">4/5k BDT</div>
+                    </div>
+                  </div>
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Tutor Gender</div>
+                      <div class="bold-text">Female</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Date</div>
+                      <div class="bold-text">27-05-2024</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Job ID</div>
+                      <div class="bold-text">108</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer">
+                <button class="btn">Apply Now</button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-6 mb-4">
+            <div class="needTutor">
+              <div class="header d-flex align-items-center">
+                <h5>Need Tutor For Class Three</h5>
+                <p>2 weeks ago</p>
+              </div>
+              <div class="body">
+                <div class="details">
+                  <p>These tutors provide personalized attention, helping young
+                learners grasp foundational concepts in subjects like math,
+                reading, and writing.</p>
+                </div>
+                <div class="properties">
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Location</div>
+                      <div class="bold-text">Dhanmondi</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Subject</div>
+                      <div class="bold-text">Math</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Per Week</div>
+                      <div class="bold-text">3/4 Days</div>
+                    </div>
+                  </div>
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Background Medium</div>
+                      <div class="bold-text">English Medium</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Tution Time</div>
+                      <div class="bold-text">Flexible</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Salary</div>
+                      <div class="bold-text">5/6k BDT</div>
+                    </div>
+                  </div>
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Tutor Gender</div>
+                      <div class="bold-text">Male</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Date</div>
+                      <div class="bold-text">01-06-2024</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Job ID</div>
+                      <div class="bold-text">109</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer">
+                <button class="btn">Apply Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Row 1 -->
+          <div class="col-md-6 mb-4">
+            <div class="needTutor">
+              <div class="header d-flex align-items-center">
+                <h5>Need Tutor For Class Two</h5>
+                <p>1 month ago</p>
+              </div>
+              <div class="body">
+                <div class="details">
+                  <p>These tutors provide personalized attention, helping young
+                learners grasp foundational concepts in subjects like math,
+                reading, and writing.</p>
+                </div>
+                <div class="properties">
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Location</div>
+                      <div class="bold-text">Muhammadpur</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Subject</div>
+                      <div class="bold-text">All</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Per Week</div>
+                      <div class="bold-text">4/5 Days</div>
+                    </div>
+                  </div>
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Background Medium</div>
+                      <div class="bold-text">Bangla Medium</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Tution Time</div>
+                      <div class="bold-text">Negotiable</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Salary</div>
+                      <div class="bold-text">4/5k BDT</div>
+                    </div>
+                  </div>
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Tutor Gender</div>
+                      <div class="bold-text">Female</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Date</div>
+                      <div class="bold-text">27-05-2024</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Job ID</div>
+                      <div class="bold-text">108</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer">
+                <button class="btn">Apply Now</button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-6 mb-4">
+            <div class="needTutor">
+              <div class="header d-flex align-items-center">
+                <h5>Need Tutor For Class Three</h5>
+                <p>2 weeks ago</p>
+              </div>
+              <div class="body">
+                <div class="details">
+                  <p>These tutors provide personalized attention, helping young
+                learners grasp foundational concepts in subjects like math,
+                reading, and writing.</p>
+                </div>
+                <div class="properties">
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Location</div>
+                      <div class="bold-text">Dhanmondi</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Subject</div>
+                      <div class="bold-text">Math</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Per Week</div>
+                      <div class="bold-text">3/4 Days</div>
+                    </div>
+                  </div>
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Background Medium</div>
+                      <div class="bold-text">English Medium</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Tution Time</div>
+                      <div class="bold-text">Flexible</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Salary</div>
+                      <div class="bold-text">5/6k BDT</div>
+                    </div>
+                  </div>
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Tutor Gender</div>
+                      <div class="bold-text">Male</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Date</div>
+                      <div class="bold-text">01-06-2024</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Job ID</div>
+                      <div class="bold-text">109</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer">
+                <button class="btn">Apply Now</button>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Repeat similar blocks for Rows 2, 3, and 4 -->
+        </div>
+        <div class="row">
+          <!-- Row 2 -->
+          <div class="col-md-6 mb-4">
+            <div class="needTutor">
+              <div class="header d-flex align-items-center">
+                <h5>Need Tutor For Class Two</h5>
+                <p>1 month ago</p>
+              </div>
+              <div class="body">
+                <div class="details">
+                  <p>These tutors provide personalized attention, helping young
+                learners grasp foundational concepts in subjects like math,
+                reading, and writing.</p>
+                </div>
+                <div class="properties">
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Location</div>
+                      <div class="bold-text">Muhammadpur</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Subject</div>
+                      <div class="bold-text">All</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Per Week</div>
+                      <div class="bold-text">4/5 Days</div>
+                    </div>
+                  </div>
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Background Medium</div>
+                      <div class="bold-text">Bangla Medium</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Tution Time</div>
+                      <div class="bold-text">Negotiable</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Salary</div>
+                      <div class="bold-text">4/5k BDT</div>
+                    </div>
+                  </div>
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Tutor Gender</div>
+                      <div class="bold-text">Female</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Date</div>
+                      <div class="bold-text">27-05-2024</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Job ID</div>
+                      <div class="bold-text">108</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer">
+                <button class="btn">Apply Now</button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-6 mb-4">
+            <div class="needTutor">
+              <div class="header d-flex align-items-center">
+                <h5>Need Tutor For Class Three</h5>
+                <p>2 weeks ago</p>
+              </div>
+              <div class="body">
+                <div class="details">
+                  <p>These tutors provide personalized attention, helping young
+                learners grasp foundational concepts in subjects like math,
+                reading, and writing.</p>
+                </div>
+                <div class="properties">
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Location</div>
+                      <div class="bold-text">Dhanmondi</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Subject</div>
+                      <div class="bold-text">Math</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Per Week</div>
+                      <div class="bold-text">3/4 Days</div>
+                    </div>
+                  </div>
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Background Medium</div>
+                      <div class="bold-text">English Medium</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Tution Time</div>
+                      <div class="bold-text">Flexible</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Salary</div>
+                      <div class="bold-text">5/6k BDT</div>
+                    </div>
+                  </div>
+                  <div class="property-row">
+                    <div class="property">
+                      <div class="light-text">Tutor Gender</div>
+                      <div class="bold-text">Male</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Date</div>
+                      <div class="bold-text">01-06-2024</div>
+                    </div>
+                    <div class="property">
+                      <div class="light-text">Job ID</div>
+                      <div class="bold-text">109</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer">
+                <button class="btn">Apply Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--review section start-->
+    <div class="review_section2">
+        <div><img src="../img/smiling-young-male-professional-standing-with-arms-crossed-while-making-eye-contact-against-isolated-background.jpg"></div>
+        <div>
+          <h1>Our Most satisfied 
+            customer says about us!</h1>
+            <p>Most of our user give us feedback regarding our services. Your 
+              can see their comments on bellow</p>
+              <div class="review_rating">
+                  <ul>
+                    <li><a href="#"><i class="fa-solid fa-star" style="color: #fcac3b;"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-star" style="color: #fcac3b;"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-star" style="color: #fcac3b;"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-star" style="color: #fcac3b;"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-star" style="color: #fcac3b;"></i></a></li>
+                  </ul>
+                  <p class="rating">4.8</p>
+                
+                <div><i class="fa-solid fa-quote-right" style="color: #ffc800;"></i></div>
+              </div>
+              <p class="review_content">As a parent, finding the right tutor for your child can be quite 
+                daunting. However, Tutor Academy made the process seamless 
+                and efficient for us. They listened to our requirements carefully 
+                and matched us with a tutor who perfectly suited our child's 
+                needs</p>
+                <h3>Zamil Hossain</h3>
+                <p>Parent</p>
+        </div>
+      </div>
+    <!--review section end-->
+      <!--Styled div start-->
+      <div class="styled-div">
+        <h1>Can't Find Your Desired Tutor?</h1>
+        <div class="button-container">
+          <button class="white-button">Request a Tutor</button>
+          <button class="orange-button"><i class="fa-solid fa-phone-volume"></i> Call Us Now</button>
+        </div>
+      </div>
+      <!--styled div end-->
+
+      <!-- Footer section start -->
+      <footer>
+        <div class="footer-container">
+          <div class="footer-item">
+            <div class="logo">
+              <i class="fa-solid fa-book-open-reader"></i>Wise<span>Tutors</span>
+            </div>
+            <p>
+              Established in 2015, Tutor Academy is Bangladesh's premier online
+              platform, linking guardians, students, and verified tutors across 6
+              categories nationwide.
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <div class="app">
+              <div class="common-app">
+                <div class="app-img">
+                  <img src="../img/appstore-icon-512x467-rmaotxgf.png" alt="app store">
+                </div>
+                <p>Download on the <br><span>App Store</span></p>
+              </div>
+              <div class="common-app">
+                <div class="app-img">
+                  <img src="../img/104089.png" alt="Google Play">
+                </div>
+                <p>Download on the <br><span>App Store</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="footer-item">
+            <h2>Useful Link</h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Become a Tutor</a></li>
+              <li><a href="#">Request a Tutor</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Request a Tutor</a></li>
+            </ul>
+          </div>
+          <div class="footer-item">
+            <h2>Our Services</h2>
+            <ul>
+              <li><a href="#">Online Tutoring</a></li>
+              <li><a href="#">Group Tutoring</a></li>
+              <li><a href="#">Package Tutoring</a></li>
+              <li><a href="#">Study Abroad Tutoring</a></li>
+              <li><a href="#">Hostel Facilities</a></li>
+            </ul>
+          </div>
+          <div class="footer-item">
+            <h2>Office Address</h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Become a Tutor</a></li>
+              <li><a href="#">Request a Tutor</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Request a Tutor</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <!--Footer section end-->
+
+      <!--Copyright section start-->
+      <div class="footer">
+        <p>&#169Copyright 2024 | Tutor Academy | All Rights Reserved</p>
+      </div>
+      <!--Copyright section end-->
+    </div>
+
+    <!--bootstrap cdn-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!--JQuery cdn-->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!--Select form cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
+

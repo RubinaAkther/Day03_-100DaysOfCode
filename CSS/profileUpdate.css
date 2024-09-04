@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+  font-family: 'DM Sans', sans-serif;
+}
+
+.heading-tutor {
+  text-align: center;
+  margin-top: 6%;
+}
+.heading-tutor h2 {
+  font-weight: 600;
+  font-size: 3.2rem;
+}
+.heading-tutor p {
+  width: 40%;
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 0.8rem;
+  margin-top: 15px;
+  color: #0000007e;
+}
+.slide-item {
+  cursor: pointer;
+}
+.form-step {
+  display: none;
+}
+.form-step.active {
+  display: block;
+}
+
+.form-step p span {
+  color: purple;
+}
+
+.profile-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+.btn-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.btn-group button {
+  margin-right: 10px;
+}
+.border-bottom {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+.upload-container {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border-color: #84c1fd;
+}
+.upload-container input[type='file'] {
+  display: none;
+}
+.upload-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group select,
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 15px;
+}
+
+.btn-success {
+  background-color: #a490b90e;
+  border: 1px solid #d3d3d344;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.btn-success:hover {
+  background-color: #6667ab;
+  color: white;
+}
+
+/* left side */
+
+.list-group-item {
+  font-weight: 500;
+  color: #00000077;
+  border: none;
+  font-size: 0.875rem;
+  padding: 15px;
+  width: 90%;
+}
+
+.list-group-item.active {
+  font-weight: 500;
+  color: #000000;
+  background-color: #a490b917;
+  border: none;
+  font-size: 0.875rem;
+  padding: 15px;
+  border-radius: 7px;
+}
+
+/* right side */
+.form-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.form-control {
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+.form-select {
+  padding: 13px 15px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  color: #0000008c;
+}
+.form-group select,
+.form-group input {
+  padding: 13px 15px;
+  border-radius: 10px;
+}
+::placeholder {
+  font-size: 0.8rem;
+}
+.form-step h4 {
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+.form-step p {
+  font-size: 0.87rem;
+  color: #00000077;
+  margin-bottom: 30px;
+}
+.btn-group {
+  width: 70%;
+}
+.btn-group .button1 {
+  background-color: #6667ab;
+  color: white;
+  font-weight: 300;
+  font-size: 0.87rem;
+  padding: 9px 15px;
+}
+.btn-group .button1:hover {
+  background-color: #5f609e;
+}
+.btn-group .button2 {
+  background-color: #ffffff;
+  color: #ff0000f5;
+  font-weight: 500;
+  font-size: 0.87rem;
+  padding: 9px 15px;
+  border: 1px solid lightgray;
+}
+.btn-group .button2:hover {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
+  border-radius: 9px;
+}
+.btn-group > :not(.btn-check:first-child) + .btn {
+  border-radius: 9px;
+}
+.btn-place {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+div:nth-child(8) {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.bg-change .btn {
+  padding: 13px 60px;
+  background-color: #6667ab;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+.bg-change .btn-success:hover {
+  background-color: #a490b90e;
+  border: 1px solid #d3d3d344;
+  color: black;
+}
+.container-fluid {
+  margin-bottom: 8%;
+}
+
+.form-step p {
+  color: black;
+  font-size: 0.8rem;
+}
+
+.btn-place {
+  display: flex;
+  align-items: end !important;
+  justify-content: end !important;
+}
+
+.bor-remove {
+  border-left: 1px solid #00000023;
+}
+
+@media (max-width: 576px) {
+  .heading-tutor h2 {
+    font-size: 1.5rem;
+  }
+  .heading-tutor p {
+    width: 98%;
+  }
+  .list-group-item {
+    width: 100%;
+  }
+  .bor-remove {
+    border: none;
+    padding: 0px !important;
+  }
+  #multiStepForm {
+    padding: 0px !important;
+  }
+  .btn-group {
+    width: 100%;
+  }
+}

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WiseTutors</title>
+    <!--font-awesome cdn-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--Selection cdn-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <!--bootstrap cdn-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
+  <body>
+    <div>
+      <!--Navbar Start-->
+      <nav class="custom_nav navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-md">
+          <!--Logo-->
+          <a class="logo navbar-brand fs-3" href="#">
+            <i class="fa-solid fa-book-open-reader"></i>Wise<span
+              >Tutors</span
+            ></a
+          >
+          <!--toggle btn-->
+          <button
+            class="custom_btn navbar-toggler shadow-none border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!--SideBar-->
+          <div
+            class="sidebar offcanvas offcanvas-start"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <!--SideBar Header-->
+            <div class="offcanvas-header text-black border-bottom">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                <a class="logo navbar-brand fs-5" href="#">
+                  <i class="fa-solid fa-book-open-reader"></i>Wise<span
+                    >Tutors</span
+                  ></a
+                >
+              </h5>
+              <button
+                type="button"
+                class="btn-close shadow-none"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <!--sidebar body-->
+            <div
+              class="offcanvas-body d-flex justify-content-center align-items-center flex-column p-4 flex-lg-row"
+            >
+              <ul
+                class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3"
+              >
+                <li class="nav-item">
+                  <a
+                    class="nav-link active mx-2"
+                    aria-current="page"
+                    href="./index.html"
+                    >Request A Tutor</a
+                  >
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./HTML/tutorList.html">All Tutors</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./HTML/searchTutor.html">Search Tutor</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./HTML/ourTutor.html">Tuition Jobs</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./HTML/aboutUs.html">About Us</a>
+                </li>
+              </ul>
+              <!--login/Sign Up-->
+              <div
+                class="logIn d-flex flex-column flex-lg-row justify-content-center align-itmes-center"
+              >
+                <a href="./HTML/updateYourProfile.html" class="outlin-btn common-btn"
+                  >My Account</a
+                >
+                <a href="./HTML/tutorProfile.html" class="bg-btn common-btn">Become a Tutor</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!--Navbar end-->
+      <!-- *** Hero content section start *** -->
+      <section class="hero-content container-md d-flex">
+        <!--Left side-->
+        <div class="hero-content-left">
+          <h1>Best Tutoring Platform For Home & Online Tuitions</h1>
+          <p>
+            These platforms offer personalized learning experiences, catering to
+            both school and college students.
+          </p>
+          <a href="#hireTutor" class="common-btn bg-btn"
+            >Hire a Tutor It's Free</a
+          >
+        </div>
+        <!--Right side-->
+        <div class="hero-content-right">
+          <div class="hat d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div
+            class="d-flex align-items-center justify-content-between flex-column gap-2"
+          >
+            <div
+              class="hero-div1 d-flex align-items-center justify-content-between"
+            >
+              <div class="img1">
+                <img src="./img/concentrated-girl-writing-note.jpg" alt="studentImage">
+              </div>
+              <div class="img2">
+                <img src="./img/concentrated-girl-writing-note.jpg" alt="studentImage">
+              </div>
+            </div>
+            <div
+              class="hero-div1 d-flex align-items-center justify-content-between"
+            >
+              <div class="img2">
+                <img src="./img/concentrated-girl-writing-note.jpg" alt="studentImage">
+              </div>
+              <div class="img1">
+                <img src="./img/concentrated-girl-writing-note.jpg" alt="studentImage">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- *** Hero content section end *** -->
+      <!-- *** counter section start *** -->
+      <div class="counter">
+        <div class="count">
+          <p>
+            <span class="num" data-val="50">000</span>k<span class="coutn-plus"
+              >+</span
+            >
+          </p>
+          <p class="count-para">Total Tutors</p>
+        </div>
+        <div class="count">
+          <p>
+            <span class="num" data-val="30">000</span>k<span class="coutn-plus"
+              >+</span
+            >
+          </p>
+          <p class="count-para">Total Students</p>
+        </div>
+        <div class="count">
+          <p>
+            <span class="num" data-val="579">000</span
+            ><span class="coutn-plus">+</span>
+          </p>
+          <p class="count-para">Total jobs</p>
+        </div>
+        <div class="count">
+          <p>
+            <span class="num" data-val="4">0</span>.<span
+              class="num"
+              data-val="9"
+              >0</span
+            ><span class="coutn-plus">+</span>
+          </p>
+          <p class="count-para">Avg Rating</p>
+        </div>
+      </div>
+      <!-- *** counter section end *** -->
+      <!-- *** Tutor or Tuition section start *** -->
+      <div class="tutor_or_Tuition">
+        <h2>Find Your Tutor Or Tuition</h2>
+        <p>Hire your tutor with a single click from these categories</p>
+        <!--Location selection-->
+        <div class="location">
+          <div class="location-left">
+            <select name="" id="" class="demo">
+              <option value="al">Dhaka</option>
+              <option value="al">whyslf</option>
+              <option value="al">jidoe</option>
+              <option value="al">showe</option>
+            </select>
+          </div>
+          
+          <div class="line"></div>
+          <div class="location-right"><i class="fa-solid fa-location-dot"></i>
+            <select name="" id="" class="demo">
+              <option value="al">Mohammodpur</option>
+              <option value="al">whyslf</option>
+              <option value="al">jidoe</option>
+              <option value="al">showe</option>
+            </select> </div>
+          
+          <button class="common-btn bg-btn">Search</button>
+        </div>
+        <!--Filter section-->
+        <div class="filters">
+          <p id="hideDiv">Filters</p>
+          <div class="hide" id="myDiv">
+            <div class="dropdown_box">
+              <div class="dropdown">
+                <p>Background Medium <i class="fa-solid fa-angle-down"></i></p>
+                <div class="options"></div>
+              </div>
+              <div class="dropdown">
+                <p>Select Class <i class="fa-solid fa-angle-down"></i></p>
+                <div class="options"></div>
+              </div>
+              <div class="dropdown">
+                <p>Preferred Subject <i class="fa-solid fa-angle-down"></i></p>
+                <div class="options"></div>
+              </div>
+              <div class="dropdown">
+                <p>Select Gender <i class="fa-solid fa-angle-down"></i></p>
+                <div class="options"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Available tuition section-->
+        <div class="available_tuition">
+          <p>Available Tuition(72)</p>
+          <button class="common-btn outlin-btn">View All</button>
+        </div>
+        <div class="need_tutor">
+          <div class="cards-container">
+            <div class="card">
+              <div class="card-header">
+                <p>Need Tutor For Class Two</p>
+                <p>Job ID: 108</p>
+              </div>
+              <p class="card-description">
+                These tutors provide personalized attention, helping young
+                learners grasp foundational concepts in subjects like math,
+                reading, and writing.
+              </p>
+              <div class="apply_details">
+                <div class="details">
+                  <p>Location</p>
+                  <p>Muhammadpur</p>
+                </div>
+                <div class="details">
+                  <p>Per Week</p>
+                  <p>4/5 Days</p>
+                </div>
+                <div class="details">
+                  <p>Tutor Gender</p>
+                  <p>Female</p>
+                </div>
+                <div class="details">
+                  <p>Salary</p>
+                  <p>4/5k BDT</p>
+                </div>
+                <div class="details">
+                  <p>Subject</p>
+                  <p>All</p>
+                </div>
+                <div class="details">
+                  <p>Date</p>
+                  <p>27-05-2024</p>
+                </div>
+              </div>
+              <div class="auth-buttons-bg">
+                <button>Apply Now</button>
+              </div>
+            </div>
+
+            <!-- Repeat the card structure for the second card -->
+            <div class="card">
+              <div class="card-header">
+                <p>Need Tutor For Class Three</p>
+                <p>Job ID: 109</p>
+              </div>
+              <p class="card-description">
+                These tutors provide personalized attention, helping young
+                learners grasp foundational concepts in subjects like math,
+                reading, and writing.
+              </p>
+              <div class="apply_details">
+                <div class="details">
+                  <p>Location</p>
+                  <p>Dhanmondi</p>
+                </div>
+                <div class="details">
+                  <p>Per Week</p>
+                  <p>3/4 Days</p>
+                </div>
+                <div class="details">
+                  <p>Tutor Gender</p>
+                  <p>Male</p>
+                </div>
+                <div class="details">
+                  <p>Salary</p>
+                  <p>5/6k BDT</p>
+                </div>
+                <div class="details">
+                  <p>Subject</p>
+                  <p>All</p>
+                </div>
+                <div class="details">
+                  <p>Date</p>
+                  <p>28-05-2024</p>
+                </div>
+              </div>
+              <div class="auth-buttons">
+                <button>Apply Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- *** Tutor or Tuition section start *** -->
+
+      <!--Gurdian's/Students start-->
+      <div class="gurdian-container container text-center">
+        <h1 class="my-4">How Does It Work for gurdian's/Students</h1>
+        <p class="mb-4">
+          Whether you prefer in-person sessions of virtual classes, these platforms provide effective and efficient ways to enhance your learning experience.
+        </p>
+        <div class="flex-container">
+          <div class="circle-div">
+            <div class="circle circle-A"></div>
+            <h3 class="content">Request A Tutor</h3>
+            <p class="content">Fill out all the required fields and submit your request</p>
+          </div>
+          <div class="circle-div">
+            <div class="circle circle-B"></div>
+            <h3 class="content">Top 5 Tutor CVs</h3>
+            <p class="content">Within 48 hours, you'll get up to 5 CVs of the best tutors who applied to your posted job.</p>
+          </div>
+          <div class="circle-div">
+            <div class="circle circle-C"></div>
+            <h3 class="content">Choose & Learn</h3>
+            <p class="content">Fill out all the required fields and submit your request</p>
+          </div>
+        </div>
+      </div>
+      <!--Gurdian's/Students start-->
+
+      <!--Animated cards start-->
+      <div class="heading-paragraph">
+        <h1>Our popular categories</h1>
+        <p>
+          Hire your tutor with a single click from these categories
+        </p>
+      </div>
+  
+      <div class="cards_demo-container">
+        <div class="card_demo">
+          <img src="./img/man.png" alt="man">
+          <h3>Online Tutoring</h3>
+        </div>
+        <div class="card_demo">
+          <img src="./img/man.png" alt="man">
+          <h3>Group Tutoring</h3>
+        </div>
+        <div class="card_demo">
+          <img src="./img/man.png" alt="man">
+          <h3>Package Tutoring</h3>
+        </div>
+        <div class="card_demo">
+          <img src="./img/man.png" alt="man">
+          <h3>Arabic Tutoring</h3>
+        </div>
+        <div class="card_demo">
+          <img src="./img/man.png" alt="man">
+          <h3>Hostel facilities</h3>
+        </div>
+        <div class="card_demo">
+          <img src="./img/man.png" alt="man">
+          <h3>Study abroad 
+            Consultancy</h3>
+        </div>
+        <div class="coming_soon">
+          <p>Coming soon...</p>
+        </div>
+        <div class="coming_soon">
+          <p>Coming soon...</p>
+        </div>
+      </div>
+  
+      <div class="animated_card_heading">
+        <h1>We were featured on:</h1>
+      </div>
+      <div id="carouselExample" data-bs-wrap ="true" data-bs-ride = "carousel" class="carousel slide carousel-modify">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./img/kalerKontho.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/daily_sun.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/etefaq.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      
+      <!--Animated cards end-->
+      <!-- Review section start -->
+      <div class="review_section1">
+        <div class="review-content">
+          <h2>How does it work for tutors?</h2>
+          <p>
+            For tutors, the process starts by creating a profile on the platform and listing 
+            their qualifications, experience, and subjects they teach.</p>
+            <div class="review_cards">
+              <h1>Create a free account</h1>
+              <p>
+                Create your account in minutes with some required 
+                information.</p>
+            </div>
+            <div class="review_cards">
+              <h1>Complete Your Profile</h1>
+              <p>
+                Complete your profile by including your personal, educational, 
+                tuition related and supporting documentation details.</p>
+            </div>
+            <div class="review_cards">
+              <h1>Apply to Your Desired Tuition Job</h1>
+              <p>
+                Check the job board everyday and apply on desirable tuition 
+                jobs which match with you the most</p>
+            </div>
+        </div>
+        <div>
+          <img src="./img/man-reading-book-indoors-front-view.jpg" alt="man holding books">
+        </div>
+      </div>
+      <div class="review_section2">
+        <div><img src="./img/smiling-young-male-professional-standing-with-arms-crossed-while-making-eye-contact-against-isolated-background.jpg"></div>
+        <div>
+          <h1>Our Most satisfied 
+            customer says about us!</h1>
+            <p>Most of our user give us feedback regarding our services. Your 
+              can see their comments on bellow</p>
+              <div class="review_rating">
+                  <ul>
+                    <li><a href="#"><i class="fa-solid fa-star" style="color: #fcac3b;"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-star" style="color: #fcac3b;"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-star" style="color: #fcac3b;"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-star" style="color: #fcac3b;"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-star" style="color: #fcac3b;"></i></a></li>
+                  </ul>
+                  <p class="rating">4.8</p>
+                
+                <div><i class="fa-solid fa-quote-right" style="color: #ffc800;"></i></div>
+              </div>
+              <p class="review_content">As a parent, finding the right tutor for your child can be quite 
+                daunting. However, Tutor Academy made the process seamless 
+                and efficient for us. They listened to our requirements carefully 
+                and matched us with a tutor who perfectly suited our child's 
+                needs</p>
+                <h3>Zamil Hossain</h3>
+                <p>Parent</p>
+        </div>
+      </div>
+      <!-- Review section end -->
+
+      <!--Styled div start-->
+      <div class="styled-div">
+        <h1>Can't Find Your Desired Tutor?</h1>
+        <div class="button-container">
+          <button class="white-button">Request a Tutor</button>
+          <button class="orange-button"><i class="fa-solid fa-phone-volume"></i> Call Us Now</button>
+        </div>
+      </div>
+      <!--styled div end-->
+
+      <!-- Footer section start -->
+      <footer>
+        <div class="footer-container">
+          <div class="footer-item">
+            <div class="logo">
+              <i class="fa-solid fa-book-open-reader"></i>Wise<span>Tutors</span>
+            </div>
+            <p>
+              Established in 2015, Tutor Academy is Bangladesh's premier online
+              platform, linking guardians, students, and verified tutors across 6
+              categories nationwide.
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <div class="app">
+              <div class="common-app">
+                <div class="app-img">
+                  <img src="./img/appstore-icon-512x467-rmaotxgf.png" alt="app store">
+                </div>
+                <p>Download on the <br><span>App Store</span></p>
+              </div>
+              <div class="common-app">
+                <div class="app-img">
+                  <img src="./img/104089.png" alt="Google Play">
+                </div>
+                <p>Download on the <br><span>App Store</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="footer-item">
+            <h2>Useful Link</h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Become a Tutor</a></li>
+              <li><a href="#">Request a Tutor</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Request a Tutor</a></li>
+            </ul>
+          </div>
+          <div class="footer-item">
+            <h2>Our Services</h2>
+            <ul>
+              <li><a href="#">Online Tutoring</a></li>
+              <li><a href="#">Group Tutoring</a></li>
+              <li><a href="#">Package Tutoring</a></li>
+              <li><a href="#">Study Abroad Tutoring</a></li>
+              <li><a href="#">Hostel Facilities</a></li>
+            </ul>
+          </div>
+          <div class="footer-item">
+            <h2>Office Address</h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Become a Tutor</a></li>
+              <li><a href="#">Request a Tutor</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Request a Tutor</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <!--Footer section end-->
+
+      <!--Copyright section start-->
+      <div class="footer">
+        <p>&#169Copyright 2024 | Tutor Academy | All Rights Reserved</p>
+      </div>
+      <!--Copyright section end-->
+    </div>
+
+    <!--bootstrap cdn-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!--JQuery cdn-->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+       $(document).ready(function() {
+            $('#dynamic-container').html('<span class="select2 select2-container select2-container--default"></span>');
+            setTimeout(function() {
+                $('span.select2.select2-container.select2-container--default')
+                    .addClass('full-width'); 
+            }, 100); 
+        });
+    </script>
+    <!--Select form cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
